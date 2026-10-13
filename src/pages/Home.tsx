@@ -11,6 +11,7 @@ const PRACTICE = [
   { to: '/writing', jp: '書く', title: 'Writing practice', text: 'Draw characters with your mouse or finger and have each stroke checked.' },
   { to: '/speaking', jp: '話す', title: 'Speaking practice', text: 'Listen, repeat into the microphone, and see what was heard.' },
   { to: '/quizzes', jp: '試す', title: 'Quizzes', text: 'Short quizzes for reading, listening, writing and speaking.' },
+  { to: '/wheel', jp: '回す', title: 'Learning wheel', text: 'Spin for a random character, then read it aloud and write it.' },
 ]
 
 export function Home() {
@@ -64,7 +65,7 @@ export function Home() {
 
       <section>
         <h2 className="h2">Practise as you go</h2>
-        <div className="mt-5 grid gap-3 md:grid-cols-3">
+        <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
           {PRACTICE.map((s) => (
             <Link key={s.to} to={s.to} className="card block p-5 transition-colors hover:border-red">
               <span className="text-2xl font-bold text-red" lang="ja">

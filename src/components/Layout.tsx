@@ -10,6 +10,7 @@ export const NAV = [
   { to: '/speaking', label: 'Speaking' },
   { to: '/writing', label: 'Writing' },
   { to: '/quizzes', label: 'Quizzes' },
+  { to: '/wheel', label: 'Wheel' },
 ]
 
 const SPEEDS = [
@@ -45,7 +46,7 @@ export function Layout() {
   }, [pathname])
 
   const link = ({ isActive }: { isActive: boolean }) =>
-    `rounded-lg px-3 py-2 text-sm font-medium ${isActive ? 'bg-red-soft text-red-dark' : 'text-ink hover:bg-line/50'}`
+    `rounded-lg px-3 py-2 text-sm font-medium lg:px-2 xl:px-3 ${isActive ? 'bg-red-soft text-red-dark' : 'text-ink hover:bg-line/50'}`
 
   return (
     <div className="flex min-h-screen flex-col">

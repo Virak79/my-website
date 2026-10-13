@@ -148,6 +148,11 @@ export function WritingPad({ char, guide = true, lockGuide = false, onResult }: 
             reference?.map((d, i) => (
               <path key={i} d={d} fill="none" stroke="#e3d9c9" strokeWidth="5" strokeLinecap="round" strokeLinejoin="round" />
             ))}
+          {showGuide && !reference && (
+            <text x="54.5" y="54.5" fontSize="84" fill="#e3d9c9" textAnchor="middle" dominantBaseline="central" lang="ja">
+              {target}
+            </text>
+          )}
         </svg>
         <canvas
           ref={canvasRef}

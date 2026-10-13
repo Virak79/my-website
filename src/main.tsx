@@ -10,6 +10,7 @@ import { VocabularyPage } from './pages/VocabularyPage.tsx'
 import { SpeakingPage } from './pages/SpeakingPage.tsx'
 import { WritingPage } from './pages/WritingPage.tsx'
 import { QuizzesPage } from './pages/QuizzesPage.tsx'
+import { WheelPage } from './pages/WheelPage.tsx'
 
 function NotFound() {
   return (
@@ -35,6 +36,7 @@ createRoot(document.getElementById('root')!).render(
           <Route path="speaking" element={<SpeakingPage />} />
           <Route path="writing" element={<WritingPage />} />
           <Route path="quizzes" element={<QuizzesPage />} />
+          <Route path="wheel" element={<WheelPage />} />
           <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>

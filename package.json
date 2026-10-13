@@ -8,7 +8,8 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
     "fetch-strokes": "node scripts/fetch-strokes.mjs",
-    "test:recognizer": "node scripts/test-recognizer.ts"
+    "test:recognizer": "node scripts/test-recognizer.ts",
+    "test:wheel": "node scripts/test-wheel.ts"
   },
   "dependencies": {
     "react": "^19.3.0",

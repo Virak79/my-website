@@ -1,6 +1,6 @@
 # Nihongo First Steps
 
-A beginner Japanese learning website: read, write and speak Hiragana, Katakana and 66 beginner Kanji, with vocabulary, speaking practice, handwriting practice and quizzes.
+A beginner Japanese learning website: read, write and speak Hiragana, Katakana and 66 beginner Kanji, with vocabulary, speaking practice, handwriting practice, quizzes and a spinning wheel for random practice.
 
 ## Run it
 
@@ -30,9 +30,17 @@ No API keys, accounts or backend are needed.
 
 `npm run test:recognizer` runs it against synthetic handwriting (distorted reference strokes) and fails if a wrong character is ever accepted.
 
+## Learning wheel
+
+The wheel page (`/wheel`) picks a character at random, then asks the student to read it aloud and write it, reusing the speech and handwriting checks above. Students can add and remove entries, switch between Hiragana, Katakana, Kanji, Mixed and Custom modes, and save named wheels. Everything is stored in the browser (`localStorage`, key `nfs:wheel`).
+
+`planSpin()` in `src/lib/wheel.ts` picks the entry first, then works out the rotation that stops the wheel inside that segment; the page reads the result back from the final rotation, so the character shown is always the one under the pointer.
+
+`npm run test:wheel` covers adding and removing entries, spinning, landing on the picked segment, and saved wheels.
+
 ## Layout
 
 - `src/data` – lesson content (kana, kanji, vocabulary, phrases) and stroke data
-- `src/lib` – romaji conversion, speech, recogniser, quiz builder
-- `src/components` – audio button, stroke-order demo, writing pad, speaking check, quiz runner
-- `src/pages` – the eight pages
+- `src/lib` – romaji conversion, speech, recogniser, quiz builder, wheel logic
+- `src/components` – audio button, stroke-order demo, writing pad, speaking check, quiz runner, wheel and its challenge
+- `src/pages` – the nine pages

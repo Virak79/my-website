@@ -73,8 +73,55 @@ body {
     stroke-dashoffset: 0;
   }
 }
+/* Spinning wheel: the winning segment flashes, the chosen character pops in with a burst. */
+.wheel-win {
+  fill-opacity: 0;
+  animation: wheel-flash 0.45s ease-in-out 3;
+}
+@keyframes wheel-flash {
+  50% {
+    fill-opacity: 0.6;
+  }
+}
+.wheel-pop {
+  animation: wheel-pop 0.5s cubic-bezier(0.2, 1.4, 0.4, 1) both;
+}
+@keyframes wheel-pop {
+  from {
+    opacity: 0;
+    transform: scale(0.4);
+  }
+}
+.wheel-burst span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin: -0.275rem;
+  border-radius: 2px;
+  background: var(--c);
+  opacity: 0;
+  animation: wheel-burst 0.9s ease-out 0.1s;
+}
+@keyframes wheel-burst {
+  from {
+    opacity: 1;
+    transform: rotate(var(--a)) translateY(-1.5rem);
+  }
+  to {
+    opacity: 0;
+    transform: rotate(var(--a)) translateY(-7rem) scale(0.4);
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   .stroke-anim {
     animation-duration: 0.01s;
+  }
+  .wheel-win,
+  .wheel-pop,
+  .wheel-burst span {
+    animation: none;
   }
 }
